@@ -10,8 +10,11 @@
 }
 
 body { 
+    background-image: url('../images/worldcup.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
     font-size: 16px;
-    background-color: black;
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -19,6 +22,12 @@ body {
 }
 
 header > h1 { text-align: center; padding: 8px; }
+
+#title-website{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 4em;
+}
 
 article { 
     width: 25%; 
@@ -33,22 +42,54 @@ article {
 
 main { text-align: center; }
 
-article > h2 { color: gray;  padding: 4px 8px; }
+article > h2 { color: #FF97C1;  padding: 4px 8px; }
 
-article:first-of-type { border: 4px solid gray; }
+article:first-of-type { border: 4px solid #FF97C1; }
 
-#inprogress { border: 4px solid red; }
-#inprogress h2 { color: red; }
+#inprogress { border: 4px solid #E0144C; }
+#inprogress h2 { color: #E0144C; }
 
-#done { border: 4px solid green; }
-#done h2 { color: green; }
+#done { border: 4px solid #FF5858; }
+#done h2 { color: #FF5858; }
 
-ul { list-style-type: none; }
+ul { list-style-type: none;}
 
-ul li { padding: 6px 8px; text-transform: uppercase; }
+ul li { 
+    padding: 6px 8px; 
+    text-transform: uppercase; 
+    position: relative;
+}
 
-.todo li:nth-child(odd) { background-color: rgba(255, 255, 255, 0.2)}
+.todo li:nth-child(odd) { background-color: #FF97C1;}
 
-.inprogress li:nth-child(odd) { background-color: rgba(255, 0, 0, 0.5)}
+.inprogress li:nth-child(odd) { background-color: #E0144C;}
 
-.done li:nth-child(odd) { background-color: rgba(0, 255, 0, 0.5)}
+.done li:nth-child(odd) { background-color: #FF5858;}
+
+/* homework */
+
+input[type="checkbox"]{
+    margin-left: 5px;
+  }
+
+input[type="checkbox"]:checked::after{
+    content: "\2713";
+    width: 15px;
+    height: 15px;
+    border: 4px solid #863A6F;
+    border-radius: 50%;
+    background-color: #975C8D;
+    position: absolute;
+    top:4px;
+    right: 18px;
+    font-size: 1em;
+    text-align: center;
+    color: #fff;
+  
+    animation: fadeIn 0.7s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to{ opacity: 1;}
+  }
